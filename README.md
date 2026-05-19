@@ -1,6 +1,6 @@
 # Patient-Vital-Monitoring
 
-Welcome to the **Patient-Vital-Monitoring Project** repository! 
+Welcome to the **Patient-Vital-Monitoring Project** repository
 
 This project demonstrates an End-to-End data pipeline solution, from generating streams of live data to delivering actionable medical insights. Designed as a portfolio project, it highlights industry best practices in data engineering, cloud architecture, and real-time analytics.
 
