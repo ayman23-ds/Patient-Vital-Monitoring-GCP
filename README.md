@@ -42,7 +42,7 @@ The movement and transformation of patient data through the pipeline can be brok
    - Role: The analytical engine of the pipeline.
    - Mechanism: Powered by Apache Beam, the Dataflow job consumes the live messages from the Pub/Sub subscription continuously.
    - Transformation Layers (Medallion Architecture):
-   *  Bronze Layer: Safely backs up the raw, unmodified JSON messages directly into Google Cloud Storage (GCS) buckets for auditing.
-   *  Silver Layer: Parses and validates the streaming data to ensure accurate schema adherence.
-   *  Gold Layer: Groups the streaming records into fixed 1-minute time windows per patient. It computes rolling averages for vitals and dynamically flags the highest risk category (max_risk_level). The processed                            insights are immediately streamed into Google Cloud BigQuery tables.
+     *  Bronze Layer: Safely backs up the raw, unmodified JSON messages directly into Google Cloud Storage (GCS) buckets for auditing.
+     *  Silver Layer: Parses and validates the streaming data to ensure accurate schema adherence.
+     *  Gold Layer: Groups the streaming records into fixed 1-minute time windows per patient. It computes rolling averages for vitals and dynamically flags the highest risk category (max_risk_level). The processed                            insights are immediately streamed into Google Cloud BigQuery tables.
 4. Business Intelligence & Visualization (Power BI)Role: The presentation layer for medical personnel and stakeholders.Mechanism: Power BI connects directly to the Google Cloud BigQuery Gold dataset using either DirectQuery (for near real-time updates) or scheduled refresh modes.Value Delivered: Translates complex tabular data into intuitive, visual health dashboards. Doctors and nurse stations can monitor live patient health trends, track average vital metrics across wards, and receive immediate visual cues for patients flagged with "High" or "Moderate" risk levels, driving faster clinical decisions.
