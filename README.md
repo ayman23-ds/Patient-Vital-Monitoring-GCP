@@ -28,3 +28,21 @@ This project implements a real-time, end-to-end streaming data pipeline built on
 - Storage & Data Lake: Google Cloud Storage (GCS)
 - Data Warehousing & Analytics: Google Cloud BigQuery
 - Programming Language: Python 3
+- Visulaization : PowerBi
+
+---
+
+Data Pipeline Lifecycle: From Source to Visualization
+The movement and transformation of patient data through the pipeline can be broken down into three main operational phases:
+1. Data Generation (The Simulator)
+   - Role: Acts as the streaming data source, mimicking IoT medical devices attached to patients in a hospital.
+   - Mechanism: The Python-based simulator (patient_vitals_simulator.py) generates continuous, real-time healthcare metrics including heart rates, oxygen saturation ($SpO_2$), and body temperatures.
+   - Ingestion: Each generated message is instantly published as a JSON payload to a Google Cloud Pub/Sub Topic, ensuring high-throughput and decoupled asynchronous communication.
+2. Stream Processing & Aggregation (Google Cloud Dataflow)
+   - Role: The analytical engine of the pipeline.
+   - Mechanism: Powered by Apache Beam, the Dataflow job consumes the live messages from the Pub/Sub subscription continuously.
+   - Transformation Layers (Medallion Architecture):
+         * Bronze Layer: Safely backs up the raw, unmodified JSON messages directly into Google Cloud Storage (GCS) buckets for auditing.
+         * Silver Layer: Parses and validates the streaming data to ensure accurate schema adherence.
+         * Gold Layer: Groups the streaming records into fixed 1-minute time windows per patient. It computes rolling averages for vitals and dynamically flags the highest risk category (max_risk_level). The processed                            insights are immediately streamed into Google Cloud BigQuery tables.
+4. Business Intelligence & Visualization (Power BI)Role: The presentation layer for medical personnel and stakeholders.Mechanism: Power BI connects directly to the Google Cloud BigQuery Gold dataset using either DirectQuery (for near real-time updates) or scheduled refresh modes.Value Delivered: Translates complex tabular data into intuitive, visual health dashboards. Doctors and nurse stations can monitor live patient health trends, track average vital metrics across wards, and receive immediate visual cues for patients flagged with "High" or "Moderate" risk levels, driving faster clinical decisions.
