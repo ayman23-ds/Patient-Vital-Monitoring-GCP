@@ -58,3 +58,21 @@ The movement and transformation of patient data through the pipeline can be brok
 * **Mechanism:** Power BI connects directly to the Google Cloud BigQuery Gold dataset using DirectQuery modes for near real-time updates.
 * **Value Delivered:** Translates complex tabular data into intuitive, visual health dashboards. Doctors and nurse stations can monitor live patient health trends, track average vital metrics across wards, and receive immediate visual cues for patients flagged with "High" or "Moderate" risk levels, driving faster, life-saving clinical decisions.
 ![Project Architecture](https://github.com/ayman23-ds/Patient-Vital-Monitoring-GCP/blob/305ff51ab46352ba1f1a3730cedaff3e1a2d0712/reports/dashboard.png)
+---
+## About Me
+
+I am a **Data Engineer** with a strong interest in building modern data platforms and scalable data pipelines.
+
+I am currently pursuing a **Master’s degree in Machine Learning and Deep Learning at the University of Pavia, Italy**. My academic and technical focus includes:
+
+* Data Engineering & Data Warehousing
+* ETL / ELT Pipelines
+* Big Data Technologies
+* Machine Learning & Deep Learning
+
+I am passionate about designing efficient data architectures that enable advanced analytics and intelligent systems.
+
+## Connect With Me
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/ahmed-ayman-b69219354/)
+
