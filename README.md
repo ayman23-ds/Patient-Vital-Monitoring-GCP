@@ -13,7 +13,7 @@ This project implements a real-time, end-to-end streaming data pipeline built on
 
 ## Data Architecture
 
-![image alt]()
+![image alt](https://github.com/ayman23-ds/Patient-Vital-Monitoring-GCP/blob/2fa14b06f5c9f0efec85c773c668812bb2553535/reports/P_V_M.png)
 
 1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from simulator that generate specific type of data.
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
